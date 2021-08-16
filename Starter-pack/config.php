@@ -9,4 +9,5 @@ $config = [
     'user' => 'root',
     'password' => 'root',
     'dbname' => 'bucket_list',
+
 ];
