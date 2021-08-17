@@ -13,7 +13,7 @@
 
 <ul>
     <?php foreach ($cards as $card) : ?>
-        <li><?= $card['Activity'] ?></li>
+        <li><a href="?details=<?= $card['name'] ?>"><?= $card['name'] ?></a> <a href="?edit=<?= $card['name'] ?>">edit</a> <a href="?delete=<?= $card['name'] ?>">delete</a></li>
     <?php endforeach; ?>
 </ul>
 <form action="" method="post">
@@ -36,7 +36,6 @@
         <input type="submit" name="add" value="ADD">
     </fieldset>
 </form>
-
 
 </body>
 </html>

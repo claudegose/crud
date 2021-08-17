@@ -20,6 +20,10 @@
                 <td><label for="cardtype">Change cardtype</label></td>
                 <td><input type="text" name="changeCardtype" id="changeCardtype"></td>
             </tr>
+            <tr>
+                <td><label for="rarity">Change rarity</label></td>
+                <td><input type="text" name="changeRarity" id="rarity"></td>
+            </tr>
         </table>
         <input type="submit" name="edit" value="EDIT">
     </fieldset>

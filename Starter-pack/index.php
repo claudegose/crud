@@ -16,15 +16,33 @@ require_once 'classes/CardRepository.php';
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
 
-
-
-
-
-// This example is about a Pokémon card collection
-// Update the naming if you'd like to work with another collection
 $cardRepository = new CardRepository($databaseManager);
+if(isset($_POST['add']))
+{
+    $cardRepository->create($_POST['name'], $_POST['cardtype'], $_POST['rarity']);
+}
+if(isset($_POST['edit']))
+{
+    $cardRepository->update($_POST['changeName'], $_POST['changeCardtype'], $_POST['changeRarity']);
+}
+if(isset($_GET['delete']))
+{
+    $cardRepository->delete();
+}
 $cards = $cardRepository->get();
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view
-require 'overview.php';
+if(isset($_GET['details']))
+{
+    require 'details.php';
+}
+else if(isset($_GET['edit']))
+{
+    require 'edit.php';
+}
+else
+{
+    require 'overview.php';
+}
+
