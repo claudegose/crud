@@ -16,17 +16,26 @@
         <li><?= $card['Activity'] ?></li>
     <?php endforeach; ?>
 </ul>
-<ul>
-    <?php foreach ($cards as $card) : ?>
-        <li><?= $card['location'] ?></li>
-    <?php endforeach; ?>
-</ul>
-<ul>
-    <?php foreach ($cards as $card) : ?>
-        <li><?= $card['by_when'] ?></li>
-    <?php endforeach; ?>
-</ul>
-
+<form action="" method="post">
+    <fieldset>
+        <legend>Add new Card</legend>
+        <table>
+            <tr>
+                <td><label for="name">Name: </label></td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="cardtype">Cardtype: </label></td>
+                <td><input type="text" name="cardtype" id="cardtype"></td>
+            </tr>
+            <tr>
+                <td><label for="rarity">Rarity: </label></td>
+                <td><input type="text" name="rarity" id="rarity"></td>
+            </tr>
+        </table>
+        <input type="submit" name="add" value="ADD">
+    </fieldset>
+</form>
 
 
 </body>
